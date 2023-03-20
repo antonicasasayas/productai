@@ -32,7 +32,7 @@ import UploadErrorMessages from "./UploadErrorMessages";
 type TUploadState = "not_uploaded" | "uploading" | "uploaded";
 export type FilePreview = (File | Blob) & { preview: string };
 
-const MAX_FILES = 25;
+const MAX_FILES = 70;
 
 const Uploader = ({ handleOnAdd }: { handleOnAdd: () => void }) => {
   const [files, setFiles] = useState<FilePreview[]>([]);
@@ -49,7 +49,7 @@ const Uploader = ({ handleOnAdd }: { handleOnAdd: () => void }) => {
       "image/png": [".png"],
       "image/jpeg": [".jpeg", ".jpg"],
     },
-    maxSize: 10000000, // 10mo
+    maxSize: 17000000, // 10mo
     onDropRejected: (events) => {
       setErrorMessages([]);
       const messages: { [key: string]: string } = {};
