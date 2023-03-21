@@ -115,6 +115,7 @@ const Uploader = ({ handleOnAdd }: { handleOnAdd: () => void }) => {
         instanceClass,
       }),
     {
+  
       onSuccess: () => {
         handleOnAdd();
 
