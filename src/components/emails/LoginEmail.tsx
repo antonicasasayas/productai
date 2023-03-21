@@ -31,7 +31,7 @@ export default function LoginEmail({ url }: { url: string }): JSX.Element {
           <MjmlSection>
             <MjmlColumn>
               <MjmlText>
-                Welcome to Photoshot! Please click the magic link below to sign
+                Welcome to Photoshot ! Please click the magic link below to sign
                 in to your account.
               </MjmlText>
               <>
