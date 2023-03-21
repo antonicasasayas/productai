@@ -31,15 +31,20 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
     });
 
     const buffer = await createZipFolder(urls, project);
-
-    await s3Client.send(
-      new PutObjectCommand({
-        Bucket: process.env.S3_UPLOAD_BUCKET!,
-        Key: `${project.id}.zip`,
-        Body: buffer,
-      })
-    );
-
+    try {
+      await s3Client.send(
+        new PutObjectCommand({
+          Bucket: process.env.S3_UPLOAD_BUCKET!,
+          Key: `${project.id}.zip`,
+          Body: buffer,
+        })
+      );
+    } catch (error) {
+      console.log(error)
+    }
+   
+      console.log(`This is the buffer: ${buffer}`)
+      console.log(`This is the project: ${project}`)
     return res.json({ project });
   }
 
