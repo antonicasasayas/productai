@@ -7,6 +7,7 @@ import { getSession } from "next-auth/react";
 import { useQuery } from "react-query";
 import PageContainer from "@/components/layout/PageContainer";
 import { ProjectWithShots } from "./studio/[id]";
+import Image from "next/image";
 
 export default function Home() {
   const {
@@ -31,7 +32,6 @@ export default function Home() {
           }}
         />
       </Box>
-
       <Box mt={10}>
         <Heading as="h2" mb={4} fontWeight="semibold" fontSize="2xl">
           My Studios
