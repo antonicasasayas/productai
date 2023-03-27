@@ -169,59 +169,7 @@ const Uploader = ({ handleOnAdd }: { handleOnAdd: () => void }) => {
 				</Center>
 			)}
 
-			{uploadState === "uploaded" && (
-				<SimpleGrid
-					gap={4}
-					columns={{ base: 1, md: 3 }}
-					as="form"
-					onSubmit={(e) => {
-						e.preventDefault();
-						handleCreateProject();
-					}}
-					mt={4}
-					alignItems="flex-start"
-				>
-					<FormControl>
-						<Input
-							isRequired
-							backgroundColor="white"
-							placeholder="Studio name"
-							value={studioName}
-							onChange={(e) =>
-								setStudioName(e.currentTarget.value)
-							}
-						/>
-					</FormControl>
-					<FormControl>
-						<Input
-							value={instanceClass}
-							onChange={(e) =>
-								setInstanceClass(e.currentTarget.value)
-							}
-							backgroundColor="white"
-						/>
-
-						<FormHelperText color="blackAlpha.600">
-							Type of product, e.g. mug, shoe, watch, perfume...
-						</FormHelperText>
-					</FormControl>
-					<Box>
-						<Button
-							disabled={!Boolean(studioName)}
-							isLoading={isLoading}
-							variant="brand"
-							rightIcon={<MdCheckCircle />}
-							onClick={() => {
-								if (studioName && instanceClass) {
-									handleCreateProject();
-								}
-							}}
-						>
-							Create your Studio
-						</Button>
-					</Box>
-				</SimpleGrid>
-			)}
+			
 		</Box>
 	);
 };
