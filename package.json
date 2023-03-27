@@ -56,7 +56,6 @@
     "react-query": "^3.39.2",
     "replicate": "github:replicate/replicate-javascript",
     "sharp": "^0.31.3",
-    "smartcrop-sharp": "^2.0.6",
     "stripe": "^11.1.0",
     "superjson": "^1.12.0",
     "typescript": "4.9.3",
