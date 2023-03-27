@@ -68,18 +68,7 @@ const Uploader = ({ handleOnAdd }: { handleOnAdd: () => void }) => {
 			setErrorMessages(Object.keys(messages).map((id) => messages[id]));
 		},
 		onDrop: (acceptedFiles) => {
-			if (file?.length > 1) {
-				toast({
-					title: `You can't upload more than 1 image`,
-					duration: 3000,
-					isClosable: true,
-					position: "top-right",
-					status: "error",
-				});
-			} else {
-				setErrorMessages([]);
-				setSelectedImage(acceptedFiles[0]);
-			}
+			setSelectedImage(acceptedFiles[0]);
 		},
 	});
 
